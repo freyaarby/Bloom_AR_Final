@@ -483,7 +483,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 36536077}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1970473757}
+        m_TargetAssemblyTypeName: UIFlowManager, Assembly-CSharp
+        m_MethodName: OpenResultPanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &36536077
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1326,7 +1338,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 283530785}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1970473757}
+        m_TargetAssemblyTypeName: UIFlowManager, Assembly-CSharp
+        m_MethodName: SelectHeavyRock
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &283530785
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1947,9 +1971,6 @@ PrefabInstance:
       insertIndex: 0
       addedObject: {fileID: 436358034}
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2512387470528047719, guid: 48cb3fb68c91eb94999fd99957eb0cae, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 589589778}
     - targetCorrespondingSourceObject: {fileID: 2512387469002778309, guid: 48cb3fb68c91eb94999fd99957eb0cae, type: 3}
       insertIndex: -1
       addedObject: {fileID: 331264288}
@@ -2442,7 +2463,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 432734171}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1970473757}
+        m_TargetAssemblyTypeName: UIFlowManager, Assembly-CSharp
+        m_MethodName: OpenReleasePanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &432734171
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3230,21 +3263,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2512387470528047719, guid: 48cb3fb68c91eb94999fd99957eb0cae, type: 3}
   m_PrefabInstance: {fileID: 331264285}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &589589778
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 589589777}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: feb6ea69eef59b946bc107885bcc30ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlaceObject
-  objectToPlace: {fileID: 0}
-  placePanel: {fileID: 0}
-  releasePanel: {fileID: 0}
 --- !u!1 &602077311
 GameObject:
   m_ObjectHideFlags: 0
@@ -4190,7 +4208,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &774526976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4305,7 +4323,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 774632998}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1970473757}
+        m_TargetAssemblyTypeName: UIFlowManager, Assembly-CSharp
+        m_MethodName: OpenDisclaimerPanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &774632998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5822,7 +5852,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1033167369
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6332,7 +6362,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1096807402
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6475,18 +6505,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1970473757}
-        m_TargetAssemblyTypeName: UIFlowManager, Assembly-CSharp
-        m_MethodName: SaveStressInput
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1970473757}
         m_TargetAssemblyTypeName: UIFlowManager, Assembly-CSharp
         m_MethodName: OpenManifestationPanel
@@ -6949,7 +6967,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1199932051
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7136,7 +7154,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1271678793
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7415,7 +7433,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1286290188}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1970473757}
+        m_TargetAssemblyTypeName: UIFlowManager, Assembly-CSharp
+        m_MethodName: OpenStressInputPanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1286290188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9483,7 +9513,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1620294425}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1970473757}
+        m_TargetAssemblyTypeName: UIFlowManager, Assembly-CSharp
+        m_MethodName: SelectDarkCloud
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1620294425
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9996,7 +10038,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1685002769}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1970473757}
+        m_TargetAssemblyTypeName: UIFlowManager, Assembly-CSharp
+        m_MethodName: SelectCrumpledPaper
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1685002769
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10261,7 +10315,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1782532343
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11306,7 +11360,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1950403329}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1970473757}
+        m_TargetAssemblyTypeName: UIFlowManager, Assembly-CSharp
+        m_MethodName: OpenStressInputPanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1950403329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11374,13 +11440,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7c3bb87d58f4c04faa17a0af0a99111, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIFlowManager
+  arSession: {fileID: 702413256}
+  xrOrigin: {fileID: 589589777}
+  arManager: {fileID: 1199932050}
+  splashScreenPanel: {fileID: 1033167368}
+  disclaimerPanel: {fileID: 1782532342}
   stressInputPanel: {fileID: 1451256881}
   chooseManifestationPanel: {fileID: 1469001510}
   scanPanel: {fileID: 344893166}
   placePanel: {fileID: 1271678792}
   releasePanel: {fileID: 1979723459}
   resultPanel: {fileID: 1096807401}
+  affirmationResultPanel: {fileID: 29870962}
   stressInputField: {fileID: 585740572}
+  darkCloudCardImage: {fileID: 1443675317}
+  heavyRockCardImage: {fileID: 1462235714}
+  crumpledPaperCardImage: {fileID: 890918849}
+  darkCloudToggle: {fileID: 1338977493}
+  heavyRockToggle: {fileID: 1442984067}
+  crumpledPaperToggle: {fileID: 232493040}
 --- !u!4 &1970473758
 Transform:
   m_ObjectHideFlags: 0
@@ -11413,7 +11491,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1979723460
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11923,7 +12001,7 @@ RectTransform:
   m_Father: {fileID: 34300152}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 47, y: 0}
   m_SizeDelta: {x: 100, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -12355,6 +12433,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CloudObject
       objectReference: {fileID: 0}
+    - target: {fileID: 8668624692668000981, guid: dfe5e6b7d2c07794abab186e7c1ec127, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -12417,6 +12499,10 @@ PrefabInstance:
     - target: {fileID: 1561631748253022453, guid: 6342bf93f3ace9f47a5a9b1291ff4a6f, type: 3}
       propertyPath: m_Name
       value: HealingStone
+      objectReference: {fileID: 0}
+    - target: {fileID: 1561631748253022453, guid: 6342bf93f3ace9f47a5a9b1291ff4a6f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
