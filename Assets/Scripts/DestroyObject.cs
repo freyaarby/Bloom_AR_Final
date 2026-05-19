@@ -3,7 +3,9 @@ using UnityEngine.UI;
 
 public class DestroyObject : MonoBehaviour
 {
+    // fallback manual jika diperlukan
     public GameObject cloudObject;
+
     public GameObject flowerObject;
 
     public Slider progressBar;
@@ -16,33 +18,67 @@ public class DestroyObject : MonoBehaviour
 
     void Update()
     {
-        if (cloudObject == null)
+        // Prioritas object hasil spawn AR
+        GameObject targetObject = PlaceObject.spawnedObject;
+
+        // fallback kalau belum ada
+        if (targetObject == null)
+        {
+            targetObject = cloudObject;
+        }
+
+        // kalau tetap null, stop
+        if (targetObject == null)
             return;
 
         if (Input.GetMouseButtonDown(0))
         {
             tapCount++;
 
-            progressBar.value = (float)tapCount / maxTap;
+            // update progress bar
+            if (progressBar != null)
+            {
+                progressBar.value = (float)tapCount / maxTap;
+            }
 
+            // release setelah 5 tap
             if (tapCount >= maxTap)
             {
-                ReleaseHealing();
+                ReleaseHealing(targetObject);
             }
         }
     }
 
-    public void ReleaseHealing()
+    public void ReleaseHealing(GameObject targetObject)
     {
-        Vector3 pos = cloudObject.transform.position;
+        // ambil posisi awan
+        Vector3 pos = targetObject.transform.position;
 
-        Destroy(cloudObject);
+        // destroy awan
+        Destroy(targetObject);
 
-        flowerObject.transform.position = pos;
-        flowerObject.SetActive(true);
+        // reset static object
+        if (PlaceObject.spawnedObject == targetObject)
+        {
+            PlaceObject.spawnedObject = null;
+        }
 
-        releasePanel.SetActive(false);
+        // munculkan bunga
+        if (flowerObject != null)
+        {
+            flowerObject.transform.position = pos;
+            flowerObject.SetActive(true);
+        }
 
-        resultPanel.SetActive(true);
+        // ganti panel
+        if (releasePanel != null)
+        {
+            releasePanel.SetActive(false);
+        }
+
+        if (resultPanel != null)
+        {
+            resultPanel.SetActive(true);
+        }
     }
 }
