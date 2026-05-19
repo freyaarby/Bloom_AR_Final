@@ -3,9 +3,6 @@ using UnityEngine.UI;
 
 public class DestroyObject : MonoBehaviour
 {
-    // fallback manual jika diperlukan
-    public GameObject cloudObject;
-
     public GameObject flowerObject;
 
     public Slider progressBar;
@@ -18,67 +15,48 @@ public class DestroyObject : MonoBehaviour
 
     void Update()
     {
-        // Prioritas object hasil spawn AR
-        GameObject targetObject = PlaceObject.spawnedObject;
-
-        // fallback kalau belum ada
-        if (targetObject == null)
-        {
-            targetObject = cloudObject;
-        }
-
-        // kalau tetap null, stop
-        if (targetObject == null)
+        if (PlaceObject.spawnedObject == null)
             return;
 
         if (Input.GetMouseButtonDown(0))
         {
-            tapCount++;
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
 
-            // update progress bar
-            if (progressBar != null)
+            if (Physics.Raycast(ray, out hit))
             {
-                progressBar.value = (float)tapCount / maxTap;
-            }
+                if (hit.transform.gameObject == PlaceObject.spawnedObject)
+                {
+                    tapCount++;
 
-            // release setelah 5 tap
-            if (tapCount >= maxTap)
-            {
-                ReleaseHealing(targetObject);
+                    if (progressBar != null)
+                    {
+                        progressBar.value = (float)tapCount / maxTap;
+                    }
+
+                    if (tapCount >= maxTap)
+                    {
+                        ReleaseHealing();
+                    }
+                }
             }
         }
     }
 
-    public void ReleaseHealing(GameObject targetObject)
+    public void ReleaseHealing()
     {
-        // ambil posisi awan
-        Vector3 pos = targetObject.transform.position;
+        Vector3 pos = PlaceObject.spawnedObject.transform.position;
 
-        // destroy awan
-        Destroy(targetObject);
+        Destroy(PlaceObject.spawnedObject);
 
-        // reset static object
-        if (PlaceObject.spawnedObject == targetObject)
-        {
-            PlaceObject.spawnedObject = null;
-        }
-
-        // munculkan bunga
         if (flowerObject != null)
         {
             flowerObject.transform.position = pos;
             flowerObject.SetActive(true);
         }
 
-        // ganti panel
-        if (releasePanel != null)
-        {
-            releasePanel.SetActive(false);
-        }
+        releasePanel.SetActive(false);
 
-        if (resultPanel != null)
-        {
-            resultPanel.SetActive(true);
-        }
+        resultPanel.SetActive(true);
     }
 }

@@ -1,7 +1,4 @@
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.XR.ARFoundation;
-using UnityEngine.XR.ARSubsystems;
 
 public class PlaceObject : MonoBehaviour
 {
@@ -10,47 +7,28 @@ public class PlaceObject : MonoBehaviour
     public GameObject placePanel;
     public GameObject releasePanel;
 
-    public ARRaycastManager raycastManager;
-
     public static GameObject spawnedObject;
 
-    static List<ARRaycastHit> hits = new List<ARRaycastHit>();
-
-    void Start()
-    {
-        // fallback kalau belum di-drag manual
-        if (raycastManager == null)
-        {
-            raycastManager = FindObjectOfType<ARRaycastManager>();
-        }
-    }
+    private bool hasSpawned = false;
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && raycastManager != null)
+        if (Input.GetMouseButtonDown(0) && !hasSpawned)
         {
-            Vector2 touchPosition = Input.mousePosition;
+            Vector3 spawnPos =
+                Camera.main.transform.position +
+                Camera.main.transform.forward * 1.5f;
 
-            if (raycastManager.Raycast(
-                touchPosition,
-                hits,
-                TrackableType.PlaneWithinPolygon
-            ) && hits.Count > 0)
-            {
-                Pose hitPose = hits[0].pose;
+            spawnedObject = Instantiate(
+                objectToPlace,
+                spawnPos,
+                Quaternion.identity
+            );
 
-                if (spawnedObject == null)
-                {
-                    spawnedObject = Instantiate(
-                        objectToPlace,
-                        hitPose.position,
-                        Quaternion.identity
-                    );
+            hasSpawned = true;
 
-                    placePanel.SetActive(false);
-                    releasePanel.SetActive(true);
-                }
-            }
+            placePanel.SetActive(false);
+            releasePanel.SetActive(true);
         }
     }
 }
