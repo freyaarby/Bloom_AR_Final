@@ -14,6 +14,10 @@ public class ReleaseClickCounter : MonoBehaviour
     [Header("Flow Manager")]
     public UIFlowManager uiFlowManager;
 
+    [Header("Fallback Panels")]
+    public GameObject releasePanel;
+    public GameObject resultPanel;
+
     private int currentClicks = 0;
 
     public void OnReleaseButtonClicked()
@@ -43,6 +47,10 @@ public class ReleaseClickCounter : MonoBehaviour
 
         if (currentClicks >= requiredClicks)
         {
+            // Ini bagian terpenting:
+            // hapus awan dulu sebelum pindah ke halaman result.
+            PlaceObject.ClearSpawnedObject();
+
             currentClicks = 0;
 
             if (uiFlowManager != null)
@@ -51,7 +59,13 @@ public class ReleaseClickCounter : MonoBehaviour
             }
             else
             {
-                Debug.LogWarning("UIFlowManager belum di-drag.");
+                if (releasePanel != null)
+                    releasePanel.SetActive(false);
+
+                if (resultPanel != null)
+                    resultPanel.SetActive(true);
+
+                Debug.LogWarning("UIFlowManager belum di-drag. Pakai fallback panel.");
             }
         }
     }
