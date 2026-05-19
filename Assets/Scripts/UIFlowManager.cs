@@ -7,6 +7,9 @@ public class UIFlowManager : MonoBehaviour
 {
     public ReleaseClickCounter releaseClickCounter;
 
+    [Header("Result Objects")]
+    public GameObject flowerBloom;
+
     [Header("AR Objects")]
     public GameObject arSession;
     public GameObject xrOrigin;
@@ -135,13 +138,39 @@ public class UIFlowManager : MonoBehaviour
     }
 
     public void OpenResultPanel()
-    {
-        HideAllPanels();
+{
+    HideAllPanels();
 
-        if (resultPanel != null)
-            resultPanel.SetActive(true);
+    if (resultPanel != null)
+        resultPanel.SetActive(true);
+
+    if (flowerBloom != null)
+    {
+        flowerBloom.SetActive(true);
+        StartCoroutine(GrowFlower());
+    }
 
         StartCoroutine(AutoMoveToAffirmationResult());
+    }
+
+    private IEnumerator GrowFlower()
+    {
+        flowerBloom.transform.localScale = Vector3.zero;
+
+        float duration = 2f;
+        float timer = 0f;
+
+        while (timer < duration)
+        {
+            timer += Time.deltaTime;
+            float progress = timer / duration;
+
+            flowerBloom.transform.localScale = Vector3.Lerp(Vector3.zero, Vector3.one, progress);
+
+            yield return null;
+        }
+
+        flowerBloom.transform.localScale = Vector3.one;
     }
 
     public void OpenAffirmationResultPanel()
