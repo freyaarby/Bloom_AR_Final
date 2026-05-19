@@ -5,6 +5,8 @@ using TMPro;
 
 public class UIFlowManager : MonoBehaviour
 {
+    public ReleaseClickCounter releaseClickCounter;
+
     [Header("AR Objects")]
     public GameObject arSession;
     public GameObject xrOrigin;
@@ -120,7 +122,16 @@ public class UIFlowManager : MonoBehaviour
     public void OpenReleasePanel()
     {
         HideAllPanels();
-        if (releasePanel != null) releasePanel.SetActive(true);
+
+        if (releaseClickCounter != null)
+        {
+            releaseClickCounter.ResetCounter();
+        }
+
+        if (releasePanel != null)
+        {
+            releasePanel.SetActive(true);
+        }
     }
 
     public void OpenResultPanel()
@@ -191,7 +202,7 @@ public class UIFlowManager : MonoBehaviour
 
     private IEnumerator AutoMoveToAffirmationResult()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(5f);
         OpenAffirmationResultPanel();
     }
 

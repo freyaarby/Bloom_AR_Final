@@ -402,7 +402,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 13, y: 190}
-  m_SizeDelta: {x: 250, y: 70}
+  m_SizeDelta: {x: 400, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &36536076
 MonoBehaviour:
@@ -448,9 +448,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1970473757}
-        m_TargetAssemblyTypeName: UIFlowManager, Assembly-CSharp
-        m_MethodName: OpenResultPanel
+      - m_Target: {fileID: 559812029}
+        m_TargetAssemblyTypeName: ReleaseClickCounter, Assembly-CSharp
+        m_MethodName: OnReleaseButtonClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -672,7 +672,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 35, y: 35}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &97984366
 MonoBehaviour:
@@ -1838,17 +1838,6 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
---- !u!114 &331264289 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2512387470528047718, guid: 48cb3fb68c91eb94999fd99957eb0cae, type: 3}
-  m_PrefabInstance: {fileID: 331264285}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 589589777}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa17d122634046b4a8e23048891fafc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &344893166
 GameObject:
   m_ObjectHideFlags: 0
@@ -2232,7 +2221,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 13, y: 190}
-  m_SizeDelta: {x: 250, y: 70}
+  m_SizeDelta: {x: 400, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &432734170
 MonoBehaviour:
@@ -2894,6 +2883,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 542650428}
   m_CullTransparentMesh: 1
+--- !u!1 &559812028
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 559812030}
+  - component: {fileID: 559812029}
+  m_Layer: 0
+  m_Name: ReleaseClickManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &559812029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 559812028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b4e57ad4f1048945a88bf0c6a4f2f91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ReleaseClickCounter
+  requiredClicks: 5
+  instructionText: {fileID: 1873970411}
+  progressBar: {fileID: 0}
+  uiFlowManager: {fileID: 1970473757}
+--- !u!4 &559812030
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 559812028}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 269.34863, y: 664.66907, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &585740570
 GameObject:
   m_ObjectHideFlags: 0
@@ -3092,7 +3129,6 @@ MonoBehaviour:
   objectToPlace: {fileID: 8668624692668000981, guid: dfe5e6b7d2c07794abab186e7c1ec127, type: 3}
   placePanel: {fileID: 1271678792}
   releasePanel: {fileID: 1979723459}
-  raycastManager: {fileID: 331264289}
 --- !u!1 &602077311
 GameObject:
   m_ObjectHideFlags: 0
@@ -3477,7 +3513,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 35, y: 35}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &659852719
 MonoBehaviour:
@@ -3554,7 +3590,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 400, y: -10}
-  m_SizeDelta: {x: 60, y: 60}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &663912341
 MonoBehaviour:
@@ -3942,7 +3978,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Begin Release
+  m_text: 'Click Here to Destroy!
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3969,8 +4007,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -4051,7 +4089,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c9047a64d8c7df4ab7cd0f61d944ddc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestroyObject
-  cloudObject: {fileID: 8668624692668000981, guid: dfe5e6b7d2c07794abab186e7c1ec127, type: 3}
   flowerObject: {fileID: 0}
   progressBar: {fileID: 0}
   releasePanel: {fileID: 1979723459}
@@ -4430,7 +4467,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 400, y: -10}
-  m_SizeDelta: {x: 60, y: 60}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &834813611
 MonoBehaviour:
@@ -5575,7 +5612,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 400, y: -10}
-  m_SizeDelta: {x: 60, y: 60}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1040518523
 MonoBehaviour:
@@ -6023,7 +6060,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 0.21960784, g: 0.21960784, b: 0.21960784, a: 0.3137255}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -6609,7 +6646,6 @@ MonoBehaviour:
   objectToPlace: {fileID: 8668624692668000981, guid: dfe5e6b7d2c07794abab186e7c1ec127, type: 3}
   placePanel: {fileID: 1271678792}
   releasePanel: {fileID: 1979723459}
-  raycastManager: {fileID: 0}
 --- !u!4 &1199932052
 Transform:
   m_ObjectHideFlags: 0
@@ -6781,7 +6817,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1271678793
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6816,7 +6852,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 0.21960784, g: 0.21960784, b: 0.21960784, a: 0.3137255}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -8239,8 +8275,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 34
+  m_fontSizeBase: 34
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -8327,7 +8363,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 35, y: 35}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1438341946
 MonoBehaviour:
@@ -8730,7 +8766,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1469001511
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9559,7 +9595,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c9047a64d8c7df4ab7cd0f61d944ddc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestroyObject
-  cloudObject: {fileID: 0}
   flowerObject: {fileID: 0}
   progressBar: {fileID: 0}
   releasePanel: {fileID: 0}
@@ -11067,6 +11102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7c3bb87d58f4c04faa17a0af0a99111, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIFlowManager
+  releaseClickCounter: {fileID: 559812029}
   arSession: {fileID: 702413256}
   xrOrigin: {fileID: 589589777}
   arManager: {fileID: 1199932050}
@@ -11153,7 +11189,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 0.21960784, g: 0.21960784, b: 0.21960784, a: 0.3137255}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -11997,3 +12033,4 @@ SceneRoots:
   - {fileID: 1970473758}
   - {fileID: 1199932052}
   - {fileID: 774526977}
+  - {fileID: 559812030}
